@@ -8,8 +8,26 @@ class CommentForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            blah: ''
+            isModalOpen: false
         };
+
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+
+
+    handleSubmit(values) {
+        console.log('Current state is: ' + JSON.stringify(values));
+        alert('Current state is: ' + JSON.stringify(values));
+        //alert(`Author: ${this.author.value} Rating: ${this.rating.value} Text: ${this.text.checked}`);
+        this.toggleModal();
     }
 
     render() {
@@ -47,7 +65,7 @@ class CommentForm extends Component {
                             </div>
 
                             <div className="form-group">
-                                <Label htmlFor="text" md={2}>Comment</Label>
+                                <Label htmlFor="text">Comment</Label>
                                     <Control.textarea 
                                         model=".text" 
                                         id="text" 
@@ -56,14 +74,24 @@ class CommentForm extends Component {
                                         className="form-control"
                                     />
                             </div>
+
+                            <div className="form-group">
+                                <Button type="submit" color="primary">
+                                    Submit
+                                </Button>
+                            </div>
+
                         </LocalForm>              
                     </ModalBody>
                 </Modal>
 
-
-                <Button outline>
-                <span className="fa fa-pencil fa-lg" />
-                    Submit Comment
+                <Button 
+                    outline 
+                    type="submit" 
+                    onClick={this.toggleModal}
+                    color="primary">
+                    <i className="fa fa-pencil fa-lg" />
+                        Submit Comment
                 </Button>
             </div>
         );
@@ -127,6 +155,3 @@ function CampsiteInfo(props) {
 
 
 export default CampsiteInfo;
-
-
-
