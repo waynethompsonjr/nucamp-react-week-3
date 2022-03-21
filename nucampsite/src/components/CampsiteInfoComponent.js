@@ -20,9 +20,8 @@ class CommentForm extends Component {
                     <ModalBody>
                         <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             
-                            <Row className="form-group">
+                            <div className="form-group">
                                 <Label htmlFor="rating">Rating</Label>
-                                <Col md={10}>
                                     <Control.select
                                         model=".rating"
                                         id="rating"
@@ -35,25 +34,20 @@ class CommentForm extends Component {
                                         <option value="4">4</option>
                                         <option value="5">5</option>
                                     </Control.select>
-                                </Col>
-                            </Row>
+                            </div>
                             
-                            <Row className="form-group">
+                            <div className="form-group">
                                 <Label htmlFor="author">Author</Label>
-                                <Col md={10}>
                                     <Control.text 
                                         model=".author" 
                                         id="author" 
                                         name="author" 
                                         className="form-control" 
                                     />
-                                </Col>
-                            </Row>
+                            </div>
 
-
-                            <Row className="form-group">
+                            <div className="form-group">
                                 <Label htmlFor="text" md={2}>Comment</Label>
-                                <Col md={10}>
                                     <Control.textarea 
                                         model=".text" 
                                         id="text" 
@@ -61,9 +55,7 @@ class CommentForm extends Component {
                                         rows="6"
                                         className="form-control"
                                     />
-                                </Col>
-                            </Row>
-
+                            </div>
                         </LocalForm>              
                     </ModalBody>
                 </Modal>
