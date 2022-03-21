@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
+class CommentForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            blah: ''
+        }
+    }
+    render() {
+        return (
+            <Button outline className="fa-lg">Submit Comment</Button>
+        );
+    }
+}
+
 
 function RenderCampsite({campsite}) {
 
@@ -24,6 +39,7 @@ function RenderComments({comments}) {
                     <h4>Comments</h4>
                     {comments.map( comment => <ul><li key={comment.id}>{comment.text} <br />
                     -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</li></ul> )}
+                    <CommentForm />
                 </div>
             );
         } 
