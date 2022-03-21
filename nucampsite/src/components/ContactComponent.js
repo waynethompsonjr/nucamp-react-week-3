@@ -76,7 +76,7 @@ class Contact extends Component {
                         <a role="button" className="btn btn-link" href="mailto:fakeemail@fakeemail.co"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
                     </div>
                 </div>
-            {/* contact form */}
+
             <div className="row row-content">
                     <div className="col-12">
                         <h2>Send us your Feedback</h2>
